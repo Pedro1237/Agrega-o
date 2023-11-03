@@ -2,23 +2,17 @@
 
 class Conta {
     private $numero;
-    private $nome;
     private $saldo;
-    private $cliente;
+    private $cliente; // Relação de agregação com a classe Cliente
 
-    public function __construct($numero, $nome, $saldo, $cliente) {
+    public function __construct($numero, $saldo, Cliente $cliente) {
         $this->definirNumero($numero);
-        $this->definirNome($nome);
         $this->definirSaldo($saldo);
         $this->definirCliente($cliente);
     }
 
     public function definirNumero($numero) {
         $this->numero = $numero;
-    }
-
-    public function definirNome($nome) {
-        $this->nome = $nome;
     }
 
     public function definirSaldo($saldo) {
@@ -31,10 +25,6 @@ class Conta {
 
     public function exibirNumero() {
         return $this->numero;
-    }
-
-    public function exibirNome() {
-        return $this->nome;
     }
 
     public function exibirSaldo() {
